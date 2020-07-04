@@ -16,6 +16,7 @@ const Teachers = TeachersModel.init(
     email: { type: DataTypes.STRING(), allowNull: true },
     phoneNumber: { type: DataTypes.STRING(), allowNull: true },
     password: { type: DataTypes.STRING(), allowNull: false },
+    isTeacher: { type: DataTypes.BOOLEAN(), allowNull: false }
   },
   { sequelize }
 );
