@@ -1,0 +1,148 @@
+[
+
+    {
+        "firstName": "Stas",
+        "lastName": "Pitsyk",
+        "phoneNumber": 380964866010,
+        "groupId": 1,
+        "email": "stas@gmail.com",
+        "password": "123456"
+    },
+    {
+        "firstName": "Andrew",
+        "lastName": "Malevich",
+        "phoneNumber": 380634428460,
+        "groupId": 1,
+        "email": "andrew@gmail.com",
+        "password": "123456"
+    },
+    {
+        "firstName": "Anton",
+        "lastName": "Zabuzhko",
+        "phoneNumber": 380633936561,
+        "groupId": 1,
+        "email": "anton@gmail.com",
+        "password": "123456"
+    },
+    {
+        "firstName": "Kate",
+        "lastName": "Havrylyshyna",
+        "phoneNumber": 380930357416,
+        "groupId": 2,
+        "email": "kate@gmail.com",
+        "password": "123456"
+    },
+    {
+        "firstName": "Irina",
+        "lastName": "Lyfar",
+        "phoneNumber": 380970367443,
+        "groupId": 2,
+        "email": "irina@gmail.com",
+        "password": "123456"
+    },
+    {
+        "firstName": "Oksana",
+        "lastName": "Dovzhenko",
+        "phoneNumber": 380638913443,
+        "groupId": 2,
+        "email": "oksana@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Alexandr",
+        "lastName": "Horovyts",
+        "phoneNumber": 380632010852,
+        "groupId": 3,
+        "email": "alexandr@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Nikolay",
+        "lastName": "Leontovych",
+        "phoneNumber": 380637553915,
+        "groupId": 3,
+        "email": "nikolay@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Alexey",
+        "lastName": "Krushelnytskyi",
+        "phoneNumber": 380965308892,
+        "groupId": 3,
+        "email": "alexey@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Aaron",
+        "lastName": "Murashko",
+        "phoneNumber": 380966156427,
+        "groupId": 1,
+        "email": "aaron@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Borys",
+        "lastName": "Arkhypenko",
+        "phoneNumber": 380734246427,
+        "groupId": 1,
+        "email": "borys@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Vadym",
+        "lastName": "Krymskyi",
+        "phoneNumber": 380950210773,
+        "groupId": 1,
+        "email": "vadym@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Hleb",
+        "lastName": "Korolov",
+        "phoneNumber": 380633991758,
+        "groupId": 2,
+        "email": "hleb@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Ahata",
+        "lastName": "Kondratiuk",
+        "phoneNumber": 380733268679,
+        "groupId": 2,
+        "email": "ahata@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Vera",
+        "lastName": "Puliui",
+        "phoneNumber": 380508661352,
+        "groupId": 2,
+        "email": "vera@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Alexandr",
+        "lastName": "Paton",
+        "phoneNumber": 380442283206,
+        "groupId": 3,
+        "email": "evheniia@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Liubov",
+        "lastName": "Amosova",
+        "phoneNumber": 380687295794,
+        "groupId": 3,
+        "email": "liubov@gmail.com",
+        "password": "qwerty"
+    },
+    {
+        "firstName": "Olesia",
+        "lastName": "Mechnykova",
+        "phoneNumber": 380505038032,
+        "groupId": 3,
+        "email": "olesia@gmail.com",
+        "password": "qwerty"
+    }
+
+]

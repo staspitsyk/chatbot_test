@@ -1,0 +1,82 @@
+[
+  {
+    "topic": "topic1",
+    "teacherId": 1,
+    "groupId": 1,
+    "cabinet": 104,
+    "timeStart": "12:00",
+    "timeEnd": "13:00"
+  },
+  {
+    "topic": "topic2",
+    "teacherId": 2,
+    "groupId": 1,
+    "cabinet": 103,
+    "timeStart": "10:00",
+    "timeEnd": "11:00"
+  },
+  {
+    "topic": "topic10",
+    "teacherId": 3,
+    "groupId": 1,
+    "cabinet": 102,
+    "timeStart": "12:00",
+    "timeEnd": "13:00"
+  },
+  {
+    "topic": "topic3",
+    "teacherId": 4,
+    "groupId": 1,
+    "cabinet": 101,
+    "timeStart": "12:00",
+    "timeEnd": "13:00"
+  },
+  {
+    "topic": "topic4",
+    "teacherId": 5,
+    "groupId": 1,
+    "cabinet": 104,
+    "timeStart": "12:00",
+    "timeEnd": "13:00"
+  },
+  {
+    "topic": "topic5",
+    "teacherId": 6,
+    "groupId": 2,
+    "cabinet": 103,
+    "timeStart": "12:00",
+    "timeEnd": "13:00"
+  },
+  {
+    "topic": "topic6",
+    "teacherId": 7,
+    "groupId": 2,
+    "cabinet": 102,
+    "timeStart": "13:00",
+    "timeEnd": "14:00"
+  },
+  {
+    "topic": "topic7",
+    "teacherId": 8,
+    "groupId": 2,
+    "cabinet": 104,
+    "timeStart": "13:00",
+    "timeEnd": "14:00"
+  },
+  {
+    "topic": "topic8",
+    "teacherId": 3,
+    "groupId": 3,
+    "cabinet": 103,
+    "timeStart": "14:00",
+    "timeEnd": "15:00"
+  },
+  {
+    "topic": "topic9",
+    "teacherId": 2,
+    "groupId": 3,
+    "cabinet": 102,
+    "timeStart": "11:00",
+    "timeEnd": "12:00"
+  }
+]
