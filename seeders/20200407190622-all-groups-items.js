@@ -1,5 +1,10 @@
 'use strict';
-const groupItems = require('../../data/groupItems.json');
+const groupItems = require('../data/groupItems.json');
+
+groupItems.forEach(groupItem => {
+  groupItem.createdAt = new Date();
+  groupItem.updatedAt = new Date();
+});
 
 module.exports = {
   up: (queryInterface, Sequelize) => {

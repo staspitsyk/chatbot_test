@@ -1,5 +1,10 @@
 'use strict';
-const lessons = require('../../data/lessons.json');
+const lessons = require('../data/lessons.json');
+
+lessons.forEach(lesson => {
+  lesson.createdAt = new Date();
+  lesson.updatedAt = new Date();
+});
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
