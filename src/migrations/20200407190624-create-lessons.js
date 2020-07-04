@@ -28,7 +28,6 @@ module.exports = {
       cabinet: { type: Sequelize.INTEGER },
       timeStart: { type: Sequelize.STRING },
       timeEnd: { type: Sequelize.STRING },
-
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
