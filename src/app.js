@@ -15,10 +15,10 @@ const authRoutes = require("./modules/auth/auth.routes");
 const app = express();
 app.use(bodyPareser.json());
 
-app.use("students", studentsRoutes);
-app.use("teachers", teachersRoutes);
-app.use("groups", groupsRoutes);
-app.use("lessons", lessonsRoutes);
+app.use("/students", studentsRoutes);
+app.use("/teachers", teachersRoutes);
+app.use("/groups", groupsRoutes);
+app.use("/lessons", lessonsRoutes);
 
 passport.use(strategy);
 app.use(passport.initialize());
