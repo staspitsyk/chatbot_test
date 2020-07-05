@@ -33,6 +33,18 @@ class StudentsService {
 
     return students;
   }
+
+  async findAllByGroupId(id) {
+    const students = await Students.findAll({
+      where: { groupId: id },
+    });
+
+    if (!student) {
+      throw new NotFound(`Group is empty`);
+    }
+
+    return students;
+  }
 }
 
 module.exports = new StudentsService();
