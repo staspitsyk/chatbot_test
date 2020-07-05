@@ -1,9 +1,9 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../../db');
 
-class TeachersModel extends Model {}
+class Teachers extends Model {}
 
-const Teachers = TeachersModel.init(
+const TeachersModel = Teachers.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,8 +16,9 @@ const Teachers = TeachersModel.init(
     email: { type: DataTypes.STRING(), allowNull: true },
     phoneNumber: { type: DataTypes.STRING(), allowNull: true },
     password: { type: DataTypes.STRING(), allowNull: false },
+    isTeacher: { type: DataTypes.BOOLEAN(), allowNull: false }
   },
   { sequelize }
 );
 
-module.exports = Teachers;
+module.exports = TeachersModel;

@@ -6,9 +6,9 @@ const Teachers = require('../teachers/teachers.model');
 const Students = require('../students/students.model');
 const Lessons = require('../lessons/lessons.model');
 
-class GroupsModel extends Model {}
+class Groups extends Model {}
 
-const Groups = GroupsModel.init(
+const GroupsModel = Groups.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,21 +24,21 @@ const Groups = GroupsModel.init(
   { sequelize }
 );
 
-Students.belongsTo( Groups, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
+Students.belongsTo( GroupsModel, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
 
-Groups.hasMany( Students, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
+GroupsModel.hasMany( Students, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
 
-Lessons.belongsTo( Groups, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
+Lessons.belongsTo( GroupsModel, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
 
 Lessons.belongsTo( Teachers, { foreignKeyConstraint: true, foreignKey: 'teacherId', targetKey: 'id' } );
 
 GroupItems.belongsTo( Teachers, { foreignKeyConstraint: true, foreignKey: 'teacherId', targetKey: 'id' } );
 
-GroupItems.belongsTo( Groups, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
+GroupItems.belongsTo( GroupsModel, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
 
-Groups.hasMany( GroupItems, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
+GroupsModel.hasMany( GroupItems, { foreignKeyConstraint: true, foreignKey: 'groupId', targetKey: 'id' } );
 
 Teachers.hasMany( GroupItems, { foreignKeyConstraint: true, foreignKey: 'teacherId', targetKey: 'id' } );
 
-module.exports = Groups;
+module.exports = GroupsModel;
 

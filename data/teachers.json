@@ -5,56 +5,64 @@
         "lastName": "Adams",
         "phoneNumber": 380964866011,
         "email": "adams@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "Jake",
         "lastName": "Allen",
         "phoneNumber": 380964866012,
         "email": "allen@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "Noah",
         "lastName": "Anderson",
         "phoneNumber": 380964866013,
         "email": "anderson@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "James",
         "lastName": "Armstrong",
         "phoneNumber": 380964866014,
         "email": "armstrong@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "Jack",
         "lastName": "Atkinson",
         "phoneNumber": 380964866015,
         "email": "atkinson@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "Connor",
         "lastName": "Jacob",
         "phoneNumber": 380964866016,
         "email": "jacob@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "Liam",
         "lastName": "Bailey",
         "phoneNumber": 380964866017,
         "email": "bailey@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     },
     {
         "firstName": "John",
         "lastName": "Ball",
         "phoneNumber": 380964866018,
         "email": "ball@gmail.com",
-        "password": "123456"
+        "password": "123456",
+        "isTeacher": true
     }
 
 ]

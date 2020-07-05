@@ -1,6 +1,6 @@
-import NotFound from "./not-found";
-import BadRequest from "./bad-request";
-import Unauthorized from "./unauthorized";
-import Forbidden from './forbidden';
+const NotFound = require('./not-found');
+const BadRequest = require('./bad-request');
+const Unauthorized = require('./unauthorized');
+const Forbidden = require('./forbidden');
 
-export { NotFound, BadRequest, Unauthorized, Forbidden };
+module.exports = { NotFound, BadRequest, Unauthorized, Forbidden };
