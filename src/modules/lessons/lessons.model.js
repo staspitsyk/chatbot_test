@@ -1,9 +1,9 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../../db');
 
-class LessonsModel extends Model {}
+class Lessons extends Model {}
 
-const Lessons = LessonsModel.init(
+const LessonsModel = Lessons.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,4 +21,4 @@ const Lessons = LessonsModel.init(
   { sequelize }
 );
 
-module.exports = Lessons;
+module.exports = LessonsModel;

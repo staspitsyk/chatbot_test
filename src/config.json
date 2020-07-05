@@ -8,7 +8,7 @@
     "dialect": "postgres"
   },
   "auth": {
-    "secretOrKey": "secret-word",
+    "secretKey": "secret-word",
     "expiresIn": 360000
   }
 }
