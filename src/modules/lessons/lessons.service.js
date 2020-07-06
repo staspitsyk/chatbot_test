@@ -5,6 +5,73 @@ const Groups = require('../groups/groups.model');
 const { NotFound, Forbidden } = require('../../common/exeptions');
 
 class LessonsService {
+  async createOne(lessonData, user) {
+    if (!user.isTeacher) {
+      throw new Forbidden(`Only teachers can create new lessons`);
+    }
+
+    const teacher = await Teachers.findOne({ where: { id: lessonData.teacherId } });
+
+    if (!teacher) {
+      throw new NotFound(
+        `You can't create lesson with this teacher. Teacher with id ${lessonData.teacherId} not found`
+      );
+    }
+
+    const group = await Groups.findOne({ where: { id: lessonData.groupId } });
+
+    if (!group) {
+      throw new NotFound(
+        `You can't create lesson with this group. Group with id ${lessonData.groupId} not found`
+      );
+    }
+
+    const lesson = new Lessons(lessonData);
+
+    return lesson.save();
+  }
+
+  async updateOne(id, lessonData, user) {
+    if (!user.isTeacher) {
+      throw new Forbidden(`Only teachers can update lessons`);
+    }
+
+    const lesson = await Lessons.findOne({ where: { id } });
+
+    if (!lesson) {
+      throw new NotFound(`Lesson with id ${id} not found`);
+    }
+
+    if (lessonData.teacherId) {
+      const teacher = await Teachers.findOne({ where: { id: lessonData.teacherId } });
+
+      if (!teacher) {
+        throw new NotFound(
+          `You can't update lesson with this teacher. Teacher with id ${lessonData.teacherId} not found`
+        );
+      }
+    }
+
+    if(lessonData.groupId) {
+      const group = await Groups.findOne({ where: { id: lessonData.groupId } });
+
+      if (!group) {
+        throw new NotFound(
+          `You can't update lesson with this group. Group with id ${lessonData.groupId} not found`
+        );
+      }
+    }
+
+    for (let key in lessonData) {
+      lesson[key] = lessonData[key];
+    }
+
+    // const updatedLesson = new Lessons({...lesson,  ...lessonData });
+
+    return lesson.save();
+
+  }
+
   async findOneById(id, user) {
     const lesson = await Lessons.findOne({
       where: { id },
