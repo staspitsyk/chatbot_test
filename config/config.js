@@ -1,11 +1,13 @@
-{
-    "development": {
-      "username": "postgres",
-      "password": "123456",
-      "database": "school",
-      "host": "127.0.0.1",
-      "dialect": "postgres",
-      "operatorsAliases": false
+const dotenv = require('dotenv').config();
+
+module.exports = {
+  development: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
+    operatorsAliases: false,
     },
     "test": {
       "username": "root",

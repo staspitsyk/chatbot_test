@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const config = require('./../../config.json');
+const config = require('./../../config');
 const { Unauthorized } = require('../../common/exeptions/index');
 const studentsService = require('../../modules/students/students.service');
 const teachersService = require('../../modules/teachers/teachers.service');
