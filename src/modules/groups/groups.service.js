@@ -5,6 +5,25 @@ const Teachers = require('../teachers/teachers.model');
 const Students = require('../students/students.model');
 
 class GroupsService {
+
+  async createOne(groupData, user) {
+    if (!user.isTeacher) {
+      throw new Forbidden(`Only teachers can create new group`);
+    }
+
+    const group = await Groups.findOne({ where: { groupName: groupData.groupName } });
+
+    if (group) {
+      throw new NotFound(
+        `Group with name ${groupData.groupName} already exist`
+      );
+    }
+
+    const newGroup = new Groups(groupData);
+
+    return newGroup.save();
+  }
+
   async findOneByName(groupName, user) {
     let group;
 
@@ -89,6 +108,10 @@ class GroupsService {
         },
       ],
     });
+
+    if (!groups) {
+      throw new NotFound(`No groups found`);
+    }
 
     return groups;
   }

@@ -1,6 +1,16 @@
 const groupsService = require('./groups.service');
 
 class GroupsController {
+
+  async createOne(req, res, next) {
+    try {
+      const group = await groupsService.createOne(req.body, req.user);
+      res.send(group);
+    } catch (e) {
+      next(e);
+    }
+  }
+
   async findAll(req, res, next) {
     try {
       const groups = await groupsService.findAll(req.user);
