@@ -19,6 +19,15 @@ class LessonsController {
     }
   }
 
+  async deleteOne(req, res, next) {
+    try {
+      const lesson = await lessonsService.deleteOne(+req.params.id, req.user);
+      res.send(lesson);
+    } catch (e) {
+      next(e);
+    }
+  }
+
   async findAll(req, res, next) {
     try {
       const lessons = await lessonsService.findAll(req.user);

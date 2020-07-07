@@ -13,6 +13,6 @@ router.get('/:id', authJwt, lessonsController.findOneById);
 
 router.put('/:id', authJwt, createValidator(updateLessonDto), lessonsController.updateOne);
 
-// router.delete('/:id', authJwt, lessonsController.updateOne);
+router.delete('/:id', authJwt, lessonsController.deleteOne);
 
 module.exports = router;

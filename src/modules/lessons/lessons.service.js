@@ -66,9 +66,26 @@ class LessonsService {
       lesson[key] = lessonData[key];
     }
 
-    // const updatedLesson = new Lessons({...lesson,  ...lessonData });
-
     return lesson.save();
+
+  }
+
+  async deleteOne(id, user) {
+    if (!user.isTeacher) {
+      throw new Forbidden(`Only teachers can delete lessons`);
+    }
+
+    const lesson = await Lessons.findOne({ where: { id } });
+
+    if (!lesson) {
+      throw new NotFound(
+        `You can't delete lesson with this id. Lesson with id ${id} not found`
+      );
+    }
+
+    lesson.destroy();
+
+    return lesson;
 
   }
 
