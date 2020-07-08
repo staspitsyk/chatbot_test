@@ -31,6 +31,10 @@ class StudentsService {
 
     const students = await Students.findAll();
 
+    if (!students) {
+      throw new NotFound(`No students found`);
+    }
+
     return students;
   }
 

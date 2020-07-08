@@ -29,9 +29,13 @@ class TeachersService {
       throw new Forbidden(`Only teachers can check the list of all teachers`);
     }
 
-    const teacher = await Teachers.findAll();
+    const teachers = await Teachers.findAll();
 
-    return teacher;
+    if (!teachers) {
+      throw new NotFound(`No teachers found`);
+    }
+
+    return teachers;
   }
 }
 
