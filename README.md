@@ -7,19 +7,31 @@
 To successfully run this project locally, follow the next steps, please.
 
 create .env file in the root directory with the following fields
+
 DB_HOST=your DB_HOST
+
 DB_PORT=your DB_PORT
+
 DB_NAME=your DB_NAME
+
 DB_USER=your DB_USER
+
 DB_PASS=your DB_PASS
+
 DB_DIALECT=your DB_DIALECT
+
 SECRET_KEY=your SECRET_KEY
+
 EXPIRES_IN=your EXPIRES_IN
 
 Run this commands.
+
 1 npm install
+
 2 npm run migrate
+
 3 npm run seed
+
 4 npm start
 
 ## How to use
