@@ -11,8 +11,8 @@ router.post('/', authJwt, createValidator(createGroupDto), groupsController.crea
 router.get('/all', authJwt, groupsController.findAll);
 router.get('/:groupName', authJwt, groupsController.findOneByName);
 
-// router.put('/:id', authJwt, createValidator(updateGroupDto), groupsController.updateOne);
+router.put('/:id', authJwt, createValidator(updateGroupDto), groupsController.updateOne);
 
-// router.delete('/:id', authJwt, groupsController.deleteOne);
+router.delete('/:id', authJwt, groupsController.deleteOne);
 
 module.exports = router;
