@@ -37,22 +37,32 @@ http://localhost:4000/auth/login POST
 
 
 http://localhost:4000/students/all GET
+
 http://localhost:4000/students/:id GET
 
 http://localhost:4000/all GET
+
 http://localhost:4000/:id GET
 
 
 http://localhost:4000/groups/ POST
+
 http://localhost:4000/groups/all GET
+
 http://localhost:4000/groups/:groupName GET
+
 http://localhost:4000/groups/:id PUT
+
 http://localhost:4000/groups/:id DELETE
 
 
 http://localhost:4000/lessons/ POST
+
 http://localhost:4000/lessons/all GET
+
 http://localhost:4000/lessons/:groupName GET
+
 http://localhost:4000/lessons/:id PUT
+
 http://localhost:4000/lessons/:id DELETE
 
