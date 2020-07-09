@@ -18,7 +18,7 @@ class StudentsService {
     }
 
     if (student.id !== user.id && !user.isTeacher) {
-      throw new Forbidden(`You can't check other student's information.`);
+      throw new Forbidden('You can\'t check other student\'s information.');
     }
 
     return student;
@@ -26,13 +26,13 @@ class StudentsService {
 
   async findAll(user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can check the list of all students`);
+      throw new Forbidden('Only teachers can check the list of all students');
     }
 
     const students = await Students.findAll();
 
     if (!students) {
-      throw new NotFound(`No students found`);
+      throw new NotFound('No students found');
     }
 
     return students;
@@ -44,7 +44,7 @@ class StudentsService {
     });
 
     if (!student) {
-      throw new NotFound(`Group is empty`);
+      throw new NotFound('Group is empty');
     }
 
     return students;

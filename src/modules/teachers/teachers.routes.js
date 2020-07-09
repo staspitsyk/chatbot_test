@@ -1,4 +1,4 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const teachersController = require('./teachers.controller');
 const authJwt = require('../../common/middlewares/auth.middleware');
 

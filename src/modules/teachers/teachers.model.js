@@ -16,9 +16,9 @@ const TeachersModel = Teachers.init(
     email: { type: DataTypes.STRING(), allowNull: true },
     phoneNumber: { type: DataTypes.STRING(), allowNull: true },
     password: { type: DataTypes.STRING(), allowNull: false },
-    isTeacher: { type: DataTypes.BOOLEAN(), allowNull: false }
+    isTeacher: { type: DataTypes.BOOLEAN(), allowNull: false },
   },
-  { sequelize }
+  { sequelize },
 );
 
 module.exports = TeachersModel;

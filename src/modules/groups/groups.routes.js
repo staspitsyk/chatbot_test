@@ -1,4 +1,4 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const groupsController = require('./groups.controller');
 const authJwt = require('../../common/middlewares/auth.middleware');
 const createValidator = require('../../common/middlewares/create-validator');

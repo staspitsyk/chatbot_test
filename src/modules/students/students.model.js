@@ -18,7 +18,7 @@ const StudentsModel = Students.init(
     password: { type: DataTypes.STRING(), allowNull: false },
     groupId: { type: DataTypes.INTEGER(), allowNull: true },
   },
-  { sequelize }
+  { sequelize },
 );
 
 module.exports = StudentsModel;

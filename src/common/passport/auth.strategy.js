@@ -1,22 +1,19 @@
-
 const { Strategy, ExtractJwt } = require('passport-jwt');
 const config = require('../../config');
-const  studentsService  = require('../../modules/students/students.service');
-const  teachersService  = require('../../modules/teachers/teachers.service') ;
-const { Unauthorized } = require('../../common/exeptions/index');
-
+const studentsService = require('../../modules/students/students.service');
+const teachersService = require('../../modules/teachers/teachers.service');
+const { Unauthorized } = require('../exeptions/index');
 
 const opts = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: config.auth.secretKey,
-    expiresIn: config.auth.expiresIn,
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: config.auth.secretKey,
+  expiresIn: config.auth.expiresIn,
 };
 
 const strategy = new Strategy(opts, async (jwtPayload, done) => {
   try {
-    const user =
-      (await studentsService.findOneByEmail(jwtPayload.email)) ||
-      (await teachersService.findOneByEmail(jwtPayload.email));
+    const user = (await studentsService.findOneByEmail(jwtPayload.email))
+      || (await teachersService.findOneByEmail(jwtPayload.email));
     if (user) {
       done(null, user);
     } else {
@@ -24,8 +21,7 @@ const strategy = new Strategy(opts, async (jwtPayload, done) => {
     }
   } catch (err) {
     done(new Unauthorized(err.message), false);
-}
-
+  }
 });
 
 module.exports = strategy;
