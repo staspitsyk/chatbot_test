@@ -1,15 +1,14 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const config = require('./../../config');
+const config = require('../../config');
 const { Unauthorized } = require('../../common/exeptions/index');
-const studentsService = require('../../modules/students/students.service');
-const teachersService = require('../../modules/teachers/teachers.service');
+const studentsService = require('../students/students.service');
+const teachersService = require('../teachers/teachers.service');
 
 class AuthService {
   async login({ email, password }) {
-    const user =
-      (await studentsService.findOneByEmail(email)) ||
-      (await teachersService.findOneByEmail(email));
+    const user = (await studentsService.findOneByEmail(email))
+      || (await teachersService.findOneByEmail(email));
 
     if (!user) {
       throw new Unauthorized('Wrong email or password');

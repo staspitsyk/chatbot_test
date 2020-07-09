@@ -1,16 +1,11 @@
-'use strict';
 const groupItems = require('../data/groupItems.json');
 
-groupItems.forEach(groupItem => {
+groupItems.forEach((groupItem) => {
   groupItem.createdAt = new Date();
   groupItem.updatedAt = new Date();
 });
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('GroupItems', groupItems);
-},
-  down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('GroupItems', null, {});
-  }
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('GroupItems', groupItems),
+  down: (queryInterface, Sequelize) => queryInterface.bulkDelete('GroupItems', null, {}),
 };

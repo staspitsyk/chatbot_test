@@ -18,7 +18,7 @@ const LessonsModel = Lessons.init(
     timeStart: { type: DataTypes.STRING(), allowNull: false },
     timeEnd: { type: DataTypes.STRING(), allowNull: false },
   },
-  { sequelize }
+  { sequelize },
 );
 
 module.exports = LessonsModel;
