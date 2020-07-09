@@ -7,14 +7,14 @@ const { NotFound, Forbidden } = require('../../common/exeptions');
 class LessonsService {
   async createOne(lessonData, user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can create new lessons`);
+      throw new Forbidden('Only teachers can create new lessons');
     }
 
     const teacher = await Teachers.findOne({ where: { id: lessonData.teacherId } });
 
     if (!teacher) {
       throw new NotFound(
-        `You can't create lesson with this teacher. Teacher with id ${lessonData.teacherId} not found`
+        `You can't create lesson with this teacher. Teacher with id ${lessonData.teacherId} not found`,
       );
     }
 
@@ -22,7 +22,7 @@ class LessonsService {
 
     if (!group) {
       throw new NotFound(
-        `You can't create lesson with this group. Group with id ${lessonData.groupId} not found`
+        `You can't create lesson with this group. Group with id ${lessonData.groupId} not found`,
       );
     }
 
@@ -33,7 +33,7 @@ class LessonsService {
 
   async updateOne(id, lessonData, user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can update lessons`);
+      throw new Forbidden('Only teachers can update lessons');
     }
 
     const lesson = await Lessons.findOne({ where: { id } });
@@ -47,46 +47,44 @@ class LessonsService {
 
       if (!teacher) {
         throw new NotFound(
-          `You can't update lesson with this teacher. Teacher with id ${lessonData.teacherId} not found`
+          `You can't update lesson with this teacher. Teacher with id ${lessonData.teacherId} not found`,
         );
       }
     }
 
-    if(lessonData.groupId) {
+    if (lessonData.groupId) {
       const group = await Groups.findOne({ where: { id: lessonData.groupId } });
 
       if (!group) {
         throw new NotFound(
-          `You can't update lesson with this group. Group with id ${lessonData.groupId} not found`
+          `You can't update lesson with this group. Group with id ${lessonData.groupId} not found`,
         );
       }
     }
 
-    for (let key in lessonData) {
+    for (const key in lessonData) {
       lesson[key] = lessonData[key];
     }
 
     return lesson.save();
-
   }
 
   async deleteOne(id, user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can delete lessons`);
+      throw new Forbidden('Only teachers can delete lessons');
     }
 
     const lesson = await Lessons.findOne({ where: { id } });
 
     if (!lesson) {
       throw new NotFound(
-        `You can't delete lesson with this id. Lesson with id ${id} not found`
+        `You can't delete lesson with this id. Lesson with id ${id} not found`,
       );
     }
 
     lesson.destroy();
 
     return lesson;
-
   }
 
   async findOneById(id, user) {
@@ -118,7 +116,7 @@ class LessonsService {
     }
 
     if (!user.isTeacher && lesson.groupId !== user.groupId) {
-      throw new NotFound(`You can't check other group lessons information`);
+      throw new NotFound('You can\'t check other group lessons information');
     }
 
     return lesson;
@@ -126,7 +124,7 @@ class LessonsService {
 
   async findAll(user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can check the list of all lessons`);
+      throw new Forbidden('Only teachers can check the list of all lessons');
     }
 
     const lessons = await Lessons.findAll({
@@ -150,7 +148,7 @@ class LessonsService {
     });
 
     if (!lessons) {
-      throw new NotFound(`No lessons found`);
+      throw new NotFound('No lessons found');
     }
 
     return lessons;

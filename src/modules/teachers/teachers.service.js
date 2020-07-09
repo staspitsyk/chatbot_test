@@ -1,4 +1,4 @@
-const Teachers  = require('./teachers.model');
+const Teachers = require('./teachers.model');
 const { NotFound, Forbidden } = require('../../common/exeptions');
 
 class TeachersService {
@@ -18,7 +18,7 @@ class TeachersService {
     }
 
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can check teacher's information`);
+      throw new Forbidden('Only teachers can check teacher\'s information');
     }
 
     return teacher;
@@ -26,13 +26,13 @@ class TeachersService {
 
   async findAll(user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can check the list of all teachers`);
+      throw new Forbidden('Only teachers can check the list of all teachers');
     }
 
     const teachers = await Teachers.findAll();
 
     if (!teachers) {
-      throw new NotFound(`No teachers found`);
+      throw new NotFound('No teachers found');
     }
 
     return teachers;

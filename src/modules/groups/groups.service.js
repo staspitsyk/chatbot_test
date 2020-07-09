@@ -9,7 +9,7 @@ const sequelize = require('../../db');
 class GroupsService {
   async createOne(groupData, user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can create new group`);
+      throw new Forbidden('Only teachers can create new group');
     }
 
     const group = await Groups.findOne({ where: { groupName: groupData.groupName } });
@@ -25,7 +25,7 @@ class GroupsService {
 
   async updateOne(id, groupData, user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can update groups`);
+      throw new Forbidden('Only teachers can update groups');
     }
 
     const group = await Groups.findOne({ where: { id } });
@@ -42,7 +42,7 @@ class GroupsService {
   async deleteOne(id, user) {
     const result = await sequelize.transaction(async (transaction) => {
       if (!user.isTeacher) {
-        throw new Forbidden(`Only teachers can delete groups`);
+        throw new Forbidden('Only teachers can delete groups');
       }
 
       const group = await Groups.findOne({ where: { id } }, transaction);
@@ -58,7 +58,7 @@ class GroupsService {
             groupId: id,
           },
         },
-        transaction
+        transaction,
       );
 
       const groupItems = await GroupItems.destroy(
@@ -67,7 +67,7 @@ class GroupsService {
             groupId: id,
           },
         },
-        transaction
+        transaction,
       );
 
       const lessons = await Lessons.destroy(
@@ -76,7 +76,7 @@ class GroupsService {
             groupId: id,
           },
         },
-        transaction
+        transaction,
       );
 
       return group.destroy({ transaction });
@@ -139,7 +139,7 @@ class GroupsService {
     }
 
     if (!user.isTeacher && user.groupId !== group.id) {
-      throw new NotFound(`You can't check other group information`);
+      throw new NotFound('You can\'t check other group information');
     }
 
     return group;
@@ -147,7 +147,7 @@ class GroupsService {
 
   async findAll(user) {
     if (!user.isTeacher) {
-      throw new Forbidden(`Only teachers can check the list of all groups`);
+      throw new Forbidden('Only teachers can check the list of all groups');
     }
 
     const groups = await Groups.findAll({
@@ -171,7 +171,7 @@ class GroupsService {
     });
 
     if (!groups) {
-      throw new NotFound(`No groups found`);
+      throw new NotFound('No groups found');
     }
 
     return groups;
